@@ -25,7 +25,7 @@ export default class CognitoAuthScheme {
 
   _setToken(token) {
     if (this.options.globalToken) {
-      this.$auth.ctx.app.$axios.setHeader(this.options.tokenName, token);
+      this.$auth.ctx.app.$axios.setHeader(this.options.tokenName, this.options.tokenType + ' ' + token);
     }
   }
 
